@@ -31,7 +31,7 @@ function AdminDashboard() {
       }
 
       const result = await axios.get(
-        "http://localhost:5000/api/enquiries",
+        `${API_URL}/api/enquiries`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
