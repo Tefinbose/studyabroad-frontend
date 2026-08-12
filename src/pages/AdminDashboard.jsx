@@ -6,6 +6,7 @@ import {
   faTrash,
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
+import API_URL from "../services/api";
 
 function AdminDashboard() {
   const [enquiries, setEnquiries] = useState([]);
@@ -70,7 +71,7 @@ function AdminDashboard() {
       const token = sessionStorage.getItem("token");
 
       await axios.delete(
-        `http://localhost:5000/api/enquiries/${id}`,
+        `${API_URL}/api/enquiries/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -117,7 +118,7 @@ function AdminDashboard() {
       const token = sessionStorage.getItem("token");
 
       const result = await axios.put(
-        `http://localhost:5000/api/enquiries/${editingEnquiry._id}`,
+        `${API_URL}/api/enquiries/${editingEnquiry._id}`,
         {
           name: editingEnquiry.name,
           email: editingEnquiry.email,

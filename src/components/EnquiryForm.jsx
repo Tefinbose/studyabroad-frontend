@@ -97,7 +97,7 @@ function Enquiry() {
       }
 
       const result = await axios.post(
-        `${API_URL}`,
+        `${API_URL}/api/enquiries`,
         formData,
         {
           headers: {
